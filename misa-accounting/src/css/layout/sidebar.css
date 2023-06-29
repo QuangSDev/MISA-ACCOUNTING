@@ -1,0 +1,203 @@
+.sidebar {
+    height: 100%;
+    background-color: #393a3d;
+    width: 180px;
+    font-weight: 500;
+    color: #869AB8;
+    flex-shrink: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.sidebar__header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.sidebar__header-logo-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
+	height: 48px;
+}
+
+.sidebar__header-menu-icon {
+	background: url('../../assets/icon/Sprites.64af8f61.svg') no-repeat -428px -92px;
+	width: 16px;
+	height: 16px;
+}
+
+.sidebar__header-logo img {
+	height: 32px;
+}
+
+.sidebar__header-add-btn {
+	outline: none;
+	margin: 0 auto;
+	background-color: transparent;
+	color: white;
+	border-radius: 20px;
+	width: 120px;
+	margin: 10px auto;
+	padding: 3px;
+	border: 2px solid white;
+}
+
+.sidebar__menu {
+    flex-grow: 1;
+	overflow-y: auto;
+}
+
+.sidebar__menu-items {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    gap: 12px;
+    height: 44px;
+    white-space: nowrap;
+	color: white;
+}
+
+.sidebar__menu-items:hover {
+    background-color: #616164;
+    cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+ }
+
+
+ .sidebar__menu-items--selected {
+	background-color: #616164;
+ }
+
+.sidebar__overview-icon {
+	background: url('../../assets/icon/Sprites.64af8f61.svg') no-repeat -33px -1630px;
+	width: 18px;
+	height: 20px;
+}
+
+.sidebar__money-icon {
+	background: url('../../assets/icon/Sprites.64af8f61.svg') no-repeat -78px -1631px;
+	width: 14px;
+	height: 18px;
+}
+
+.sidebar__deposit-icon {
+	background: url('../../assets/icon/Sprites.64af8f61.svg') no-repeat -121px -1633px;
+	width: 16px;
+	height: 16px;
+}
+
+.sidebar__shopping-icon {
+	background: url('../../assets/icon/Sprites.64af8f61.svg') no-repeat -165px -1632px;
+	width: 16px;
+	height: 18px;
+}
+
+.sidebar__sell-icon {
+	background: url('../../assets/icon/Sprites.64af8f61.svg') no-repeat -206px -1631px;
+	width: 20px;
+	height: 18px
+}
+
+.sidebar__storage-icon {
+	background: url('../../assets/icon/Sprites.64af8f61.svg') no-repeat -294px -1632px;
+	width: 18px;
+	height: 17px;
+}
+
+.sidebar__tool-icon {
+	background: url('../../assets/icon/Sprites.64af8f61.svg') no-repeat -339px -1633px;;
+	width: 18px;
+	height: 17px;
+}
+
+.sidebar__fixed-assets-icon {
+	background: url('../../assets/icon/Sprites.64af8f61.svg') no-repeat -382px -1632px;
+	width: 17px;
+	height: 18px;
+}
+
+.sidebar__salary-icon {
+	background: url('../../assets/icon/Sprites.64af8f61.svg') no-repeat -33px -1630px;
+	width: 18px;
+	height: 20px;
+}
+
+.sidebar__tax-icon {
+	background: url('../../assets/icon/Sprites.64af8f61.svg') no-repeat -427px -1634px;
+	width: 16px;
+	height: 16px;
+}
+
+.sidebar__price-icon {
+	background: url('../../assets/icon/Sprites.64af8f61.svg') no-repeat -471px -1633px;
+    width: 17px;
+	height: 17px;
+}
+
+.sidebar__composition-icon {
+    background: url('../../assets/icon/Sprites.64af8f61.svg') no-repeat -514px -1632px;
+	width: 16px;
+	height: 18px;
+
+}
+
+.sidebar__budget-icon {
+    background: url('../../assets/icon/Sprites.64af8f61.svg') no-repeat -382px -1664px;
+	width: 16px;
+	height: 16px;
+}
+
+.sidebar__report-icon {
+    background: url('../../assets/icon/Sprites.64af8f61.svg') no-repeat -552px -1636px;
+	width: 14px;
+	height: 13px;
+}
+
+.sidebar__finacial-analysis-icon {
+    background: url('../../assets/icon/Sprites.64af8f61.svg') no-repeat -207px -1667px;
+	width: 17px;
+	height: 14px;
+}
+
+.sidebar__footer {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 13px 0;
+    gap: 16px;
+    border-top: 1px solid #213553;
+    padding: 24px;
+}
+
+.sidebar__chevron-left-icon {
+    background: url('../../assets/icon/Sprites.64af8f61.svg') no-repeat -36px -361px;
+	width: 8px;
+	height: 14px;
+}
+
+/* width */
+.sidebar__menu::-webkit-scrollbar {
+	width: 6px;
+    height: 6px;
+}
+
+/* Track */
+.sidebar__menu::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.sidebar__menu::-webkit-scrollbar-thumb {
+	background: #b8bcc3;
+}
+
+.scroller::-webkit-scrollbar-track-piece {
+    background-color: #f1f1f1;
+    width: 10px;
+}

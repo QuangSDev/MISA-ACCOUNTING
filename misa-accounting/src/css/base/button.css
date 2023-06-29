@@ -1,0 +1,119 @@
+.row {
+    display: flex;
+    gap: 5px;
+}
+
+.button {
+    height: 26px;
+    padding: 6px 16px;
+    border-radius: 3px;
+    background-color: #2ca01c;
+    transition: all .25s ease;
+    outline: none;
+    border: none;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    flex-shrink: 0;
+    width: 100%;
+    font-weight: bold;
+}
+
+.button:focus {
+    outline: 1px solid black;
+}
+
+.button:disabled {
+    opacity: 56%;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: #5DC748;
+}
+
+.button:active {
+    background-color: #118044;
+}
+
+.button--secondary {
+    background-color: #FFFFFF;
+    border: 1px solid #afafaf;
+    color: #1F1F1F;
+    font-weight: 500;
+    padding: 0 16px;
+
+    justify-content: center;
+}
+
+.popup .button--secondary {
+    min-width: auto;
+}
+
+.button.button--secondary:hover {
+    background-color: #F6F6F6;
+}
+
+.button.button--secondary:active {
+    background-color: #EBEBEB;
+}
+
+
+.button-icon {
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 12px center;
+    min-width: auto;
+    background-color: rgba(80,184,60,0.1);
+    padding: 0 8px;
+}
+
+.button-icon > img {
+    width: 20px;
+    height: 20px;
+}
+
+
+.button-icon:hover {
+    background-color: #96D58A;
+}
+
+.button-icon:active {
+    background-color: #306F24;
+}
+
+
+
+.table__filter-feature-container .button--secondary {
+    padding: 0 8px;
+}
+
+.table__filter-feature-container .button--secondary div {
+    background: url('../../assets/icon/Sprites.64af8f61.svg') no-repeat -1602px -91px;
+	width: 20px;
+	height: 19px;
+}
+
+.table__filter-feature-container .button-icon div {
+    background: url('../../assets/icon/Sprites.64af8f61.svg') no-repeat -650px -201px;
+	width: 20px;
+	height: 22px;
+}
+
+.main-content__feature .button--secondary {
+    padding: 0 8px;
+}
+
+.main-content__feature .button--secondary div {
+    background-image: url("../../assets/icon/option.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+
+

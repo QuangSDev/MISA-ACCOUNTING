@@ -1,0 +1,286 @@
+.import-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 5;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+/* .import-modal__header {
+    padding: 16px 16px 12px 16px;
+} */
+
+.import-modal__header--top {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 16px 12px 16px;
+    background-color: #eceef1;
+}
+
+.import-modal__header__title {
+    font-weight: 700;
+    font-size: 24px;
+    color: #111;
+    margin: 0;
+}
+
+.import-modal__stepper {
+    padding: 8px 44px 16px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: #eceef1;
+}
+
+.import-modal__stepper .step{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    color: #afafaf;
+}
+
+.active-step, .active-step .step-circle {
+    color: #2ca01c!important;
+    font-weight: bold;
+
+}
+
+.step-circle{
+    width: 32px;
+    height: 32px;
+    border: 2px solid #afafaf;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #afafaf;
+    background: #f6f8fb;
+    font-size: 18px;
+    z-index: 2;
+    font-weight: bold;
+}
+
+.active-step .step-circle {
+    border-color: #2ca01c;
+}
+
+.first-circle {
+    margin-left: 40px;
+}
+
+.second-circle {
+    margin-left: 30px;
+}
+
+.third-circle {
+    margin: 0 auto;
+}
+
+.last-circle {
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.third-step-text {
+    text-align: center;
+}
+
+.last-step-text {
+    text-align: right;
+}
+
+.step-line {
+    height: 1.5px;
+    width: 1328px;
+    z-index: 0;
+    position: absolute;
+    top: 24px;
+    left: 115px;
+    background-color: #afafaf;
+}
+
+.current-step-line {
+    background-color: #2ca01c;
+    height: 1.5px;
+    width: 40%;
+    position: absolute;
+}
+
+.import-modal__body {
+    padding: 16px 26px;
+    display: flex;
+}
+
+
+.import-modal__body--left {
+    width: 50%;
+}
+
+
+.file-input-title > span{
+    margin-left: 15px;
+    color: #757575;
+    white-space: nowrap;
+}
+
+.input-file-box {
+    background: #fff;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    position: relative;
+    border: 1px solid var(--upload-border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 48px;
+    width: 75%;
+    border: 1px solid black;
+
+}
+
+.input-file-box__placeholder {
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+}
+
+.input-file-box--hint {
+    min-width: 264px;
+    display: block;
+    text-align: center;
+    margin: 0!important;
+    padding: 0!important;
+    width: 100%;
+    color: #9e9e9e;
+    font-style: italic;
+}
+
+.import-modal__body__input-info {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.import-modal__body__input-info > div {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+}
+
+.import-modal__body__input-info > div > label {
+    font-weight: bold;
+}
+
+
+.import-modal__method-intro {
+    font-size: 18px;
+    margin-bottom: 12px;   
+}
+
+.import-modal__footer {
+    height: 42px;
+    padding: 0 16px;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: green;
+    align-items: center;
+}
+
+.import-modal__footer .button {
+    width: auto;
+}
+
+.import-method-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.import-modal__hint-intro {
+    display: flex;
+    align-items: center;
+}
+
+.import-modal__hint-intro > p{
+    margin-bottom: 2px;
+    padding-left: 10px;
+    font-size: 18px;
+}
+
+.hint-icon {
+    background: url("../../assets/icon/Sprites.64af8f61.svg") no-repeat -906px -456px;
+	width: 46px;
+	height: 46px;
+}
+
+.import-modal__body--right {
+    border-left: 1px solid #babec5;;
+    padding: 0 1rem;
+}
+
+.import-modal__body--right ul {
+    padding: 0;
+}
+
+.import-modal__body--right ul li{
+    margin: 0 0 12px 5.5em;
+}
+
+.file-input-intro {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.file-input-icon {
+    background: url("../../assets/icon/Sprites.64af8f61.svg") no-repeat -539px -203px;
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    min-height: 18px;
+}
+ 
+
+.import-merge-body {
+    width: 100%;
+}
+
+.import-merge-body .table-content {
+    width: 100%;
+}
+
+.import-merge-body .table-content__body .dropdownlist {
+    min-width: auto;
+    
+}
+
+.import-merge-body .table-content__body .dropdownlist .textfield__input-wrapper {
+    padding: 1px 5px;
+    border-radius: 1px;
+    min-height: auto;
+}
+
+.import-merge-intro {
+    display: flex;
+}
+
+.import-merge-intro--left {
+    display: flex;
+    gap: 5px;
+}
+
+.import-merge-intro--left > p{
+    font-weight: 700;
+    font-size: 16px;
+    margin: 0;
+}
+
+
+.import-validate {width: 100%;}
+
+.import-validate .table-content {width: 100%;}

@@ -1,0 +1,142 @@
+
+
+.popup-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+    top: 0;
+    left: 0;
+}
+
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+    box-shadow: 0px 4px 16px rgba(23,27,42,0.24);
+    background-color: white;
+    width: 1000px;
+}
+
+.popup-top {
+    padding: 24px;
+}
+
+.popup-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-dialog__header--left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.user-dialog__header--right {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.user-dialog__header--right .close-icon {
+    background: url('../../assets/icon/Sprites.64af8f61.svg') no-repeat -147px -147px;
+    width: 18px;
+    height: 18px;
+
+    cursor: pointer;
+}
+
+.user-dialog__header--right .info-icon {
+	background: url('../../assets/icon/Sprites.64af8f61.svg') no-repeat -89px -145px;
+	width: 22px;
+	height: 22px;
+}
+
+.popup-header__title {
+    font-weight: bold;
+    text-align: left;
+    margin: 0;
+    font-size: 20px;
+}
+
+.popup-description {
+    font-weight: 400;
+    font-size: 14px;
+    color: #1F1F1F;
+}
+
+.popup-content__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    background-color: #F5F5F5;
+    padding: 12px 24px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.user-dialog__body .user-dialog__row:first-child .user-dialog__column {
+    width: 50%;
+}
+
+.user-dialog__column {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
+.user-dialog__row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.user-dialog__footer {
+    justify-content: space-between;
+}
+
+.popup-footer__btn-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+}
+
+.user-dialog__body .custom_row {
+    gap: 20px;
+}
+
+.user-dialog__body .custom_row .user-dialog__column {
+    gap: 8px;
+    flex-direction: row;
+    width: 50%;
+}
+
+.user-dialog__body .custom_row .user-dialog__column .textfield{
+    flex-grow: 1;
+}
+
+.user-dialog__body .custom_row .user-dialog__column:last-child .textfield:last-child{
+    width: 50%;
+    flex-grow: 0;
+    margin-right: 8px;
+}
+
+
+
+
+

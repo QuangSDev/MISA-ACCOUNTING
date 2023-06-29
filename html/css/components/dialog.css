@@ -1,0 +1,58 @@
+.dialog-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.dialog {
+    background-color: white;
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 24px;
+}
+
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 24px;
+}
+
+.dialog-header__title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.dialog-header__icon--close {
+    background-image: url("../../assets/icon/x.svg");
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.dialog-description {
+    font-size: 14px;
+    font-family: Roboto Regular;
+    padding-bottom: 24px;
+}
+
+.dialog-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.popup-content__form #textfield__input::placeholder {
+    font-size: 14px;
+}

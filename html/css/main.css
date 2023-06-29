@@ -1,0 +1,49 @@
+@import url("./components/sidebar.css");
+@import url("./components/navbar.css");
+@import url("./components/table.css");
+@import url("./components/content.css");
+@import url("./components/button.css");
+@import url("./components/input.css");
+@import url("./components/combobox.css");
+@import url("./components/popup.css");
+@import url("./components//select.css");
+@import url("./components/dialog.css");
+@import url("./components/layout.css");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+    font-size: 14px;
+    background-color: #EEEFF1;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("../assets/font/Roboto-Medium.ttf");
+}
+
+@font-face {
+    font-family: Roboto Regular;
+    src: url("../assets/font/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: Roboto Bold;
+    src: url("../assets/font/Roboto-Bold.ttf");
+}
+
+input[type=checkbox] {
+    width: 18px;
+    height: 18px;
+}

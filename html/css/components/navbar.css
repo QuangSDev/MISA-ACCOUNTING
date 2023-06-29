@@ -1,0 +1,75 @@
+.navbar {
+    display: flex;
+    background-color: white;
+    height: 56px;
+    width: 100%;
+    box-shadow: 0px 0px 3px rgba(1,22,30,0.16);
+
+}
+
+#logo {
+	background: url("../../assets/icon/Sprites.64af8f61.svg") no-repeat -1232px -1015px;
+	width: 44px;
+	height: 45px;
+}
+
+.navbar--left {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    background-color: #041434;
+    padding-left: 16px;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: Roboto Bold;
+    gap: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.navbar--center {
+    margin: auto 0;
+    padding-left: 36px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.navbar--right {
+    margin: auto 0 auto auto;
+    display: flex;
+    padding-right: 16px;
+    align-items: center;
+    gap: 24px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.navbar__feature-icons {
+    width: 24px;
+    height: 24px;
+}
+
+.navbar__setting-icon {
+	background: url("../../assets/icon/Sprites.64af8f61.svg") no-repeat -512px -311px;
+    width: 16px;
+	height: 17px;
+}
+
+.navbar__bell-icon {
+	background: url("../../assets/icon/Sprites.64af8f61.svg") no-repeat -788px -30px;
+	width: 24px;
+	height: 24px;
+  
+}
+
+.navbar__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-image: url("../../assets/img/avatar.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid black;
+}
