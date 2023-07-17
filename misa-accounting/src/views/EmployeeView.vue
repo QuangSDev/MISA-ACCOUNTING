@@ -32,8 +32,8 @@
 </template>
 <script>
 //#region import component
-import EmployeeTable from "../components/employee/table/EmployeeTable.vue";
-import EmployeeForm from "@/components/employee/form/EmployeeForm.vue";
+import EmployeeTable from "@/views/employee/table/EmployeeTable.vue";
+import EmployeeForm from "@/views/employee/form/EmployeeForm.vue";
 import { ref, onMounted, watch } from "vue";
 import { getGeneratedCode } from "@/helpers/api";
 import store from "@/store";
@@ -73,6 +73,7 @@ export default {
      */
 
     onMounted(async () => {
+      document.title = "Nhân viên | Danh mục";
       store.commit("showLoading");
 
       try {
@@ -114,22 +115,23 @@ export default {
     };
 
     /**
-     *
-     * @param {*} e
-     * Feature: Hiển thị form
-     * Author: Lê Minh Quang
-     * Date: 29/03/2023
+     * - Feature: Hiển thị form
+     * - Author: Lê Minh Quang (29/03/2023)
+     * @param {{data: object, mode: number}} formData - Dữ liệu form
      */
 
-    const showEmployeeForm = async (e) => {
+    const showEmployeeForm = async (formData) => {
       if (
-        e.mode === ACCOUNTING_ENUM.MODE.ADD ||
-        e.mode === ACCOUNTING_ENUM.MODE.DUPLICATE
+        formData.mode === ACCOUNTING_ENUM.MODE.ADD ||
+        formData.mode === ACCOUNTING_ENUM.MODE.DUPLICATE
       ) {
         const newEmployeeCode = await getGeneratedCode();
-        e = { ...e, data: { ...e.data, employeeCode: newEmployeeCode } };
+        formData = {
+          ...formData,
+          data: { ...formData.data, employeeCode: newEmployeeCode },
+        };
       }
-      formDetail.value = e;
+      formDetail.value = formData;
       isFormOpen.value = true;
     };
 
@@ -156,8 +158,7 @@ export default {
 
     /**
      * Feature: Lấy lại dữ liệu
-     * Author: Lê Minh Quang
-     * Date: 22/03/2023
+     * Author: Lê Minh Quang (22/03/2023)
      */
 
     const refreshTable = async () => {
@@ -174,7 +175,7 @@ export default {
       } catch (error) {
         showToast(
           "error",
-          error.response.data?.userMsg || ACCOUNTING_TEXT.VI.systemError
+          error.response.data?.userMsg || ACCOUNTING_TEXT.vi.systemError
         );
       }
       store.commit("hideLoading");
@@ -205,9 +206,9 @@ export default {
     };
 
     /**
-     * Feature: Xóa các dòng được chọn
-     * Author: Lê Minh Quang
-     * Date: 28/03/2023
+     * - Feature: Xóa các dòng được chọn
+     * - Author: Lê Minh Quang (28/03/2023)
+     * @param {Array.<String>} selectedRows
      */
 
     const deleteSelectedRows = async (selectedRows) => {
@@ -227,9 +228,8 @@ export default {
     };
 
     /**
-     * Feature: Cập nhật keyword tìm kiếm
-     * Author: Lê Minh Quang
-     * Date: 28/03/2023
+     * - Feature: Cập nhật keyword tìm kiếm
+     * - Author: Lê Minh Quang (28/03/2023)
      * @param {string} newKeyword
      */
     const updateSearch = (newKeyword) => {
@@ -237,24 +237,21 @@ export default {
     };
 
     /**
-     * Feature: Cập nhật bộ lọc
-     * Author: Lê Minh Quang
-     * Date: 28/03/2023
-     * @param {{filterName: string}} newFilter giá trị lọc mới
+     * - Feature: Cập nhật bộ lọc
+     * - Author: Lê Minh Quang (28/03/2023)
+     * @param {Object.<string, string>} filter - Bộ lọc
      */
-    const updateFilter = (newFilter) => {
-      filters.value[Object.keys(newFilter)[0]] =
-        newFilter[Object.keys(newFilter)[0]];
+    const updateFilter = (filter) => {
+      filters.value[Object.keys(filter)[0]] = filter[Object.keys(filter)[0]];
     };
 
     /**
-     * Feature: Xóa một điều kiện lọc
-     * Author: Lê Minh Quang
-     * Date: 28/03/2023
-     * @param {string} filterName tên bộ lọc
+     * - Feature: Xóa một điều kiện lọc
+     * - Author: Lê Minh Quang (28/03/2023)
+     * @param {string} filterModel - Model bộ lọc
      */
-    const removeFilter = (filterName) => {
-      delete filters.value[filterName];
+    const removeFilter = (filterModel) => {
+      delete filters.value[filterModel];
     };
 
     /**

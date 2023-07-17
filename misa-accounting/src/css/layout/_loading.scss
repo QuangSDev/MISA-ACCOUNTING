@@ -3,14 +3,14 @@
     background-color: rgba(0, 0, 0, 0.2);
     inset: 0;
     z-index: 100;
-}
 
-.loading__layout > img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: rotation 2s infinite linear;
+    img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: rotation 2s infinite linear;
+    }
 }
 
 @keyframes rotation {

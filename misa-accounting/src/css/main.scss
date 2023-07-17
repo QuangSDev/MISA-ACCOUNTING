@@ -1,0 +1,83 @@
+@import url("./base/_dropdownlist.scss");
+@import url("./base/calendar.css");
+@import url("./base/_button.scss");
+@import url("./base/_input.scss");
+@import url("./base/_tooltip.scss");
+@import url("./base/_dialog.scss");
+@import url("./base/_pagination.scss");
+@import url("./layout/_loading.scss");
+@import url("./layout/_navbar.scss");
+@import url("./layout/_sidebar.scss");
+@import url("./layout/_content.scss");
+@import url("./components/_table.scss");
+@import url("./base/_toast.scss");
+@import url("./components/_popup.scss");
+@import url("./base/_filter.scss");
+@import url("./components/import_modal.css");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Notosans Regular;
+  font-size: 13px;
+  background-color: #eeeff1;
+  overflow-x: hidden;
+}
+
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+input[type="radio"] {
+  width: 18px;
+  height: 18px;
+}
+
+input[type="date"] {
+  font-family: Notosans Regular;
+}
+
+a {
+  text-decoration: none;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+#shower {
+  position: relative;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: green;
+}
+
+@font-face {
+  font-family: Notosans Semi;
+  src: url("../../src/assets/font/notosans-semibold.df3e6dc4.woff2");
+}
+
+@font-face {
+  font-family: Notosans Regular;
+  src: url("../assets/font/notosans-regular.2cb88a13.woff2");
+}
+
+@font-face {
+  font-family: Notosans Bold;
+  src: url("../assets/font/notosans-bold.3ede5aff.woff2");
+}

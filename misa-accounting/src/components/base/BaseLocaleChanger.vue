@@ -20,14 +20,30 @@ import { useI18n } from "vue-i18n";
 export default {
   name: "BaseLocaleChanger",
   setup() {
+    //#region Khai báo state
     const { locale } = useI18n({ useScope: "global" });
     const isShown = ref(false);
+    //#endregion
+
+    //#region Khai báo phương thức
+
+    /**
+     * Feature: Thay đổi ngôn ngữ
+     * Author: Lê Minh Quang (29/06/2023)
+     * @param {string} lang
+     */
     const changeLocale = (lang) => {
       locale.value = lang;
     };
+
+    /**
+     * Feature: Hiện thị menu chọn ngôn ngữ
+     * Author: Lê Minh Quang (29/06/2023)
+     */
     const toggleLocaleList = () => {
       isShown.value = !isShown.value;
     };
+    //#endregion
     return {
       isShown,
       locale,

@@ -11,12 +11,15 @@ import {
 } from "./directives";
 import router from "./router";
 import store from "./store";
-import BaseButton from "./components/base/BaseButton";
-import BaseTextField from "./components/base/BaseTextField";
-import BaseDropDownList from "./components/base/BaseDropDownList";
-import BaseToast from "./components/base/BaseToast";
-import BaseDialog from "./components/base/BaseDialog";
+import BaseButton from "./components/button/BaseButton";
+import BaseTextField from "./components/input/BaseTextField";
+import BaseDropDownList from "./components/dropdownlist/BaseDropDownList";
+import BaseToast from "./components/toast/BaseToast";
+import BaseDialog from "./components/dialog/BaseDialog";
 import BaseFilterButton from "./components/base/BaseFilterButton";
+import BaseDatePicker from "./components/base/BaseDatePicker";
+import BasePagination from "./components/pagination/BasePagination";
+
 import { createI18n } from "vue-i18n";
 import { ACCOUNTING_TEXT } from "./helpers/resources";
 
@@ -35,6 +38,8 @@ createApp(App)
   .component("BaseToast", BaseToast)
   .component("BaseDialog", BaseDialog)
   .component("BaseFilterButton", BaseFilterButton)
+  .component("BasePagination", BasePagination)
+  .component("BaseDatePicker", BaseDatePicker)
   .directive("click-outside", clickOutside)
   .directive("trapFocus", trapFocus)
   .directive("actionOnKeyPress", actionOnKeyPress)

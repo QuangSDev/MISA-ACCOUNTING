@@ -8,8 +8,8 @@
       v-click-outside="() => (isDialogShown = false)"
       class="filter__dialog"
       :style="{
-        top: dialogPos.y + 17 + 'px',
-        left: dialogPos.x + 14 + 'px',
+        top: dialogPos.y + 15 + 'px',
+        left: dialogPos.x - 328 + 'px',
       }"
     >
       <div class="filter__dialog-header">{{ $t("words.fixThisColumn") }}</div>
@@ -58,21 +58,8 @@
         v-if="model === 'genderName'"
         displayTextField="text"
         trueField="value"
-        :mode="1"
-        :defaultList="[
-          { text: $t('words.male'), value: 1 },
-          { text: $t('words.female'), value: 0 },
-          { text: $t('words.other'), value: 2 },
-        ]"
-        :value="
-          searchString === 1
-            ? $t('words.male')
-            : searchString === 0
-            ? $t('words.female')
-            : searchString === 3
-            ? $t('words.other')
-            : ''
-        "
+        :defaultList="defaultList"
+        :value="dValue"
         @fieldChange="searchString = $event.value"
       />
       <div class="filter__button-group">
@@ -89,20 +76,44 @@
 <script>
 import { ref, computed } from "vue";
 import { filterConditions, dateFilterConditions } from "@/helpers/constants";
+import { ACCOUNTING_ENUM } from "@/helpers/enums";
+import { useI18n } from "vue-i18n";
 
 export default {
   name: "BaseFilterButton",
-  props: ["filters", "model"],
+  props: {
+    // Model lọc
+    model: {
+      type: String,
+    },
+  },
   emits: ["updateFilter", "removeFilter"],
   setup(props, { emit }) {
+    //#region Khai báo biến và state
+    const { t } = useI18n();
+    // Danh sách điều kiện mặc định cho bộ lọc giới tính
+    const defaultList = [
+      { text: t("words.male"), value: ACCOUNTING_ENUM.GENDER.MALE },
+      { text: t("words.female"), value: ACCOUNTING_ENUM.GENDER.FEMALE },
+      { text: t("words.other"), value: ACCOUNTING_ENUM.GENDER.OTHER },
+    ];
+
+    // Biến để hiển thị dialog
     const isDialogShown = ref(false);
+
+    // Biến để hiển thị danh sách điều kiện
     const isTypeListShown = ref(false);
+
+    // Giá trị lọc của bộ giới tính (1 - nam, 0 - nữ, 2 - khác)
     const searchString = ref("");
+    // Bộ điều kiện lọc (bộ thường và bộ ngày)
     const conditionList = computed(() => {
       return props.model.toLowerCase().includes("date")
         ? dateFilterConditions
         : filterConditions;
     });
+
+    // Điều kiện lọc hiện tại
     const filter = ref(
       props.model === "genderName"
         ? conditionList.value[2]
@@ -111,23 +122,36 @@ export default {
         : conditionList.value[4]
     );
 
+    // Vị trí hiển thị dialog
     const dialogPos = ref({ x: 0, y: 0 });
 
+    // Giá trị để hiển thị (1 - nam, 0 - nữ, 2 - khác)
+    const dValue = computed(() =>
+      searchString.value === ACCOUNTING_ENUM.GENDER.MALE
+        ? t("words.male")
+        : searchString.value === ACCOUNTING_ENUM.GENDER.FEMALE
+        ? t("words.female")
+        : searchString.value === ACCOUNTING_ENUM.GENDER.OTHER
+        ? t("words.other")
+        : ""
+    );
+
+    //#endregion
+
     /**
-     * Feature: Thay đổi điều kiện lọc
-     * @param {*} newFilter
-     * Author: Lê Minh Quang
-     * Date: 29/03/2023
+     * - Feature: Thay đổi điều kiện lọc
+     * - Author: Lê Minh Quang (29/06/2023)
+     * @param {{text: string, operator: string}} newFilterCondition
      */
-    const changeFilterCondition = (newFilter) => {
+    const changeFilterCondition = (newFilterCondition) => {
+      // Tắt hiển thị danh sách chọn điều kiện và gắn điều kiện lọc mới
       isTypeListShown.value = false;
-      filter.value = newFilter;
+      filter.value = newFilterCondition;
     };
 
     /**
-     * Feature: Cập nhật lọc
-     * Author: Lê Minh Quang
-     * Date: 29/03/2023
+     * - Feature: Cập nhật điều kiện lọc
+     * - Author: Lê Minh Quang (29/06/2023)
      */
     const updateFilter = () => {
       isDialogShown.value = false;
@@ -136,15 +160,21 @@ export default {
           searchString.value + filter.value.operator,
       });
     };
+
+    /**
+     * Feature: Hiển thị dialog
+     * Author: Lê Minh Quang (29/06/2023)
+     * @param {PointerEvent} e
+     */
     const showDialog = (e) => {
+      // Gắn vị trí và toggle dialog
       dialogPos.value = { x: e.x, y: e.y };
       isDialogShown.value = !isDialogShown.value;
     };
 
     /**
      * Feature: Xóa điều kiện lọc
-     * Author: Lê Minh Quang
-     * Date: 29/03/2023
+     * Author: Lê Minh Quang (29/06/2023)
      */
     const removeFilter = () => {
       emit(
@@ -155,12 +185,15 @@ export default {
     };
 
     return {
+      ACCOUNTING_ENUM,
       searchString,
       isDialogShown,
       isTypeListShown,
       filter,
       conditionList,
       dialogPos,
+      defaultList,
+      dValue,
       removeFilter,
       changeFilterCondition,
       updateFilter,

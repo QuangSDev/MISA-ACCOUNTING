@@ -1,0 +1,76 @@
+.pagination {
+    display: flex;
+    align-items: center;
+
+    .dropdown-menu-wrapper {
+        padding: 0;
+    }
+    
+
+
+    /*Nút trước*/
+
+    .pagination__prev-button {
+        margin: 0 10px;
+        cursor: pointer;
+        user-select: none;
+
+        /* Đổi loại trỏ khi disabled*/
+        &.disabled {
+            cursor: not-allowed;
+            color: #8f8a8a;
+        }
+    }
+
+    /*Bọc dãy các nút trang và nút trước sau*/
+    .pagination__page-list-container {
+        display: flex;
+    }
+
+    /* Dãy nút trang*/
+    .pagination__page-list {
+        display: flex;
+        font-size: 13px;
+    }
+
+    /*Nút trang*/
+    .pagination__page-button {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        cursor: pointer;
+
+        /*CSS khi được chọn*/
+        &.current {
+            font-weight: 700;
+            border: 1px solid #e0e0e0;
+          }
+    }
+
+    /*Ba chấm*/
+    .pagination__page-ellipsis {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Nút tiếp theo */
+    .pagination__next-button {
+        margin-left: 10px;
+        cursor: pointer;
+        user-select: none;
+
+        /* Đổi loại trỏ khi disabled*/
+        &.disabled {
+            cursor: not-allowed;
+            color: #8f8a8a;
+        }
+    }
+}
+
+

@@ -1,0 +1,117 @@
+
+/* Textfield thường */
+.textfield {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    /* Label cho textfield */
+    .textfield__label {
+        font-size: 12px;
+        color: #1F1F1F;
+        font-weight: bold;
+        padding-bottom: 8px;
+        display: inline-block;
+        flex-grow: 0;
+    }
+
+    /* Bọc input */
+    .textfield__input-wrapper {
+        padding: 0 12px;
+        border: 1px solid #a6a6a6;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        border-radius: 2px;
+        height: 32px;
+        width: 100%;
+        position: relative;
+    }
+
+    /* CSS khi focus vào input */
+    .textfield__input-wrapper:focus-within{
+        border-color: #50B83C;
+        background-color: white;
+
+        .textfield__input {
+            background-color: white;
+        }
+    }
+    
+    /* CSS input */
+    .textfield__input {
+        outline: none;
+        height: 100%;
+        border: none;
+        border-radius: 4px;
+        background-color: transparent;
+        flex-grow: 1;
+    }
+    
+    /* CSS placeholder input */
+    .textfield__input::placeholder {
+        color: #9E9E9E;
+        font-weight: 400;
+    }
+    
+
+}
+
+/* Textfield chỉ đọc */
+.textfield[readonly] {
+    .textfield__input-wrapper, .textfield__input {
+        background-color: #EBEBEB;
+        border-color: #E0E0E0;
+        pointer-events: none;
+    }
+    .textfield__input::placeholder {
+        color: #666666;
+    }
+
+}
+
+/* Textfield khi có lỗi */
+.textfield[error]  {
+    .textfield__input-wrapper {
+        border-color: #E61D1D;
+    }
+    .textfield__error-message {
+        color: #E61D1D;
+        font-size: 12px;
+        font-weight: 400;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        margin-top: 2px;
+    }
+}
+
+/* Textfield dạng radio */
+.textfield[type=radio] {
+    .textfield__input-radio {
+        border: none;
+        padding-left: 0;
+        .radio-group {
+            display: flex;
+            gap: 4px;
+            .radio-items {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+    
+    .textfield__input-radio:hover {
+        background: transparent;
+    }
+}
+
+/* Textfield bắt buộc */
+.textfield[required=true] {
+    .textfield__label::after {
+        content: "*";
+        color: red;
+        font-weight: bold;
+        margin-left: 3px;
+    }
+};

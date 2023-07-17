@@ -1,0 +1,72 @@
+/* Layer dialog */
+.dialog-container {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  /* Dialog */
+  .dialog {
+    background-color: white;
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 24px;
+    padding-bottom: 15px;
+
+    /* Mô tả */
+    .dialog-description {
+      font-size: 14px;
+      padding-bottom: 15px;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+
+      /* Icon */
+      .dialog-icon {
+        flex-shrink: 0;
+      }
+    }
+
+    /* Footer dialog */
+    .dialog-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      border-top: 1px solid rgb(179, 167, 167);
+      padding-top: 15px;
+    }
+  }
+
+  /* Icon cảnh báo */
+
+  &.warning {
+    .dialog-icon {
+      background: url("../../assets/icon/Sprites.64af8f61.svg") no-repeat -598px -463px;
+      width: 36px;
+      height: 37px;
+    }
+  }
+
+  /* Icon thông tin */
+
+  &.info {
+    .dialog-icon {
+      background: url("../../assets/icon/Sprites.64af8f61.svg") no-repeat -832px -462px;
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  /* Icon lỗi */
+  
+  &.error {
+    .dialog-icon {
+      background: url("../../assets/icon/Sprites.64af8f61.svg") no-repeat -752px -462px;
+      width: 36px;
+      height: 36px;
+    }
+  }
+}

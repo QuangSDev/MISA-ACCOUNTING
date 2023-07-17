@@ -6,10 +6,6 @@
     </div>
     <div class="navbar--right">
       <BaseLocaleChanger />
-      <!-- <div class="navbar__feature-icons navbar__bell-icon"></div>
-      <div class="navbar__feature-icons navbar__info-icon"></div>
-      <div class="navbar__feature-icons navbar__chat-icon"></div>
-      <div class="navbar__feature-icons navbar__setting-icon"></div> -->
       <div class="navbar__user-container">
         <div class="navbar__avatar"></div>
         <span class="navbar__username">Lê Minh Quang</span>

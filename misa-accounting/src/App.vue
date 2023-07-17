@@ -26,11 +26,10 @@ import TheSidebar from "./components/layout/TheSidebar.vue";
 
 export default {
   components: { TheSidebar, TheNavbar },
-
   computed: mapState(["loading", "toasts"]),
 };
 </script>
 
 <style>
-@import url("./css/main.css");
+@import url("./css/main.scss");
 </style>

@@ -1,0 +1,224 @@
+/* Element nào cần hiển thị filter thì thêm class này */
+.filter-container {
+  position: relative;
+
+  /* Bọc nút lọc */
+  .filter__button-container {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    min-width: 14px;
+    min-height: 14px;
+
+    /* CSS khi hover */
+    &:hover {
+      .filter__button {
+        display: block;
+      }
+    }
+
+    /* Nút lọc */
+
+    .filter__button {
+      display: none;
+      padding: 3px;
+      cursor: pointer;
+      background: url("../../assets/icon/Sprites.64af8f61.svg") no-repeat -1688px -565px;
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+/* Dialog lọc */
+
+.filter__dialog {
+  background-color: white;
+  position: absolute;
+  box-shadow: 3px 3px 6px #ddd;
+  border: 1px solid #babec5;
+  padding: 22px 17px;
+  border-radius: 2px;
+  font-family: Notosans Regular;
+  font-weight: 500;
+  text-transform: none;
+  font-size: 13px;
+  width: 350px;
+  z-index: 9999;
+
+  /* Header dialog */
+  .filter__dialog-header {
+    padding-left: 30px;
+    line-height: 24px;
+    cursor: pointer;
+    border-bottom: 1px solid #ebedf0;
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+    position: relative;
+
+    /* Icon ghim */
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 24px;
+      width: 24px;
+      top: 0;
+      left: 2px;
+      background: transparent url("../../assets//icon/Sprites.64af8f61.svg")
+        no-repeat -1726px -560px;
+    }
+  }
+
+  /* Dialog body */
+
+  .filter__dialog-body {
+    display: flex;
+    justify-content: space-between;
+
+    /* Nút để hiển thị danh sách lọc */
+
+    .filter__type-button {
+      position: relative;
+      color: #0075c0;
+      padding-right: 20px;
+      font-weight: 600;
+      cursor: pointer;
+
+      /* Icon mũi tên xuống */
+
+      &::after {
+        content: "";
+        position: absolute;
+        height: 10px;
+        width: 13px;
+        background: transparent url("../../assets//icon/Sprites.64af8f61.svg")
+          no-repeat -178px -363px;
+        top: 4px;
+        right: 2px;
+      }
+
+      /* Danh sách điều kiện lọc */
+
+      .filter__type-list {
+        position: absolute;
+        box-shadow: 3px 3px 6px #ddd;
+        border: 1px solid #babec5;
+        background-color: white;
+        color: black;
+        font-weight: 400;
+        right: 0;
+
+        /* Các nút điều kiện */
+
+        & > div {
+          padding: 5px 10px;
+          transition: 0.5s;
+          white-space: nowrap;
+
+          &:hover {
+            color: #2ca01c;
+            background-color: #e8e9ec;
+          }
+        }
+      }
+    }
+
+    /* Custom lại dropdownlist */
+    .textfield__input-wrapper {
+      height: 26px;
+      margin-top: 5px;
+    }
+
+    .dropdown-menu-wrapper {
+      padding: 2px 0;
+      margin-top: 3px;
+      border: 1px solid #babec5;
+      border-radius: 2px;
+      box-shadow: 0 -8px 34px 0 rgba(0, 0, 0, 0.05);
+
+      .dropdown-items {
+        padding: 0 14px 0 10px;
+        height: auto;
+        line-height: 28px;
+      }
+    }
+  }
+
+  /* Ô nhập */
+
+  .filter__input {
+    width: 100%;
+    outline: none;
+    height: 26px;
+    border: 1px solid #babec5;
+    padding: 0 12px 0 10px;
+    font-size: 13px;
+    margin-top: 20px;
+
+    &::placeholder {
+      font-style: italic;
+    }
+
+    &:disabled {
+      background-color: rgb(238, 234, 234);
+      color: black;
+    }
+  }
+
+  /* Khối nút trong dialog */
+
+  .filter__button-group {
+    display: flex;
+    justify-content: space-between;
+
+    .button {
+      min-width: auto;
+      width: 55px;
+      height: 26px;
+      padding: 6px 16px;
+      font-weight: bold;
+      margin-top: 16px;
+      white-space: nowrap;
+    }
+
+    .button--secondary {
+      width: 70px;
+    }
+  }
+}
+
+.selected__filter-container {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.remove-filter-btn {
+  background: url("../../assets/icon/Sprites.64af8f61.svg") no-repeat;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+  background-position: -80px -312px;
+}
+
+.remove-all-filter-btn {
+  cursor: pointer;
+}
+
+.filter__quote,
+.remove-all-filter-btn {
+  color: #0075c0;
+  white-space: nowrap;
+}
+
+.table__feature-filter-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-left: 10px;
+}
