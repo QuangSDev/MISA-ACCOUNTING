@@ -16,8 +16,7 @@ import BaseTextField from "./components/input/BaseTextField";
 import BaseDropDownList from "./components/dropdownlist/BaseDropDownList";
 import BaseToast from "./components/toast/BaseToast";
 import BaseDialog from "./components/dialog/BaseDialog";
-import BaseFilterButton from "./components/base/BaseFilterButton";
-import BaseDatePicker from "./components/base/BaseDatePicker";
+import BaseFilterButton from "./components/filter/BaseFilterButton";
 import BasePagination from "./components/pagination/BasePagination";
 
 import { createI18n } from "vue-i18n";
@@ -39,7 +38,6 @@ createApp(App)
   .component("BaseDialog", BaseDialog)
   .component("BaseFilterButton", BaseFilterButton)
   .component("BasePagination", BasePagination)
-  .component("BaseDatePicker", BaseDatePicker)
   .directive("click-outside", clickOutside)
   .directive("trapFocus", trapFocus)
   .directive("actionOnKeyPress", actionOnKeyPress)

@@ -14,7 +14,7 @@
   </div>
 </template>
 <script>
-import BaseLocaleChanger from "../base/BaseLocaleChanger.vue";
+import BaseLocaleChanger from "../locale_changer/BaseLocaleChanger.vue";
 
 export default {
   name: "TheNavbar",
